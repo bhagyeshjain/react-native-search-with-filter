@@ -1,0 +1,24 @@
+{
+    "name": "react-native-search-with-filter",
+    "version": "0.0.1",
+    "description": "A simple search box with optional filter dropdown. Support both iOS/Android devices",
+    "main": "index.js",
+    "scripts": {},
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/bhagyeshjain/react-native-search-with-filter.git"
+    },
+    "author": "Bhagyesh Jain <bhagyesh.chhabra@gmail.com> (https://github.com/bhagyeshjain)",
+    "license": "MIT",
+    "keywords": [
+      "react-native",
+      "ios",
+      "android",
+      "bhagyeshjain",
+      "search-box",
+      "search-with-filter"
+    ],
+    "dependencies": {
+      "react-native-vector-icons": "^10.1.0"
+    }
+  }
