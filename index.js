@@ -13,6 +13,7 @@ import {
 } from 'react-native';
 import filter from "./assets/filter.png";
 import search from "./assets/search.png";
+import cancel from "./assets/cancel.png";
 
 /**
  * 
@@ -25,7 +26,7 @@ import search from "./assets/search.png";
  * @returns JSX search component with filter dropdown
  * @author Bhagyesh Jain
  */
-const SearchWithFilter = ({placeHolder, onSearch, filterOptions, onChangeFilterOption, isExpanded, isCollapsible = true}) => {
+const SearchWithFilter = ({placeHolder, onSearch, filterOptions, onChangeFilterOption, onSubmit, isExpanded, isCollapsible = true}) => {
   const [text, setText] = useState('');
   const [expand, setExpand] = useState(!isCollapsible || isExpanded || false);
 
@@ -70,7 +71,7 @@ const SearchWithFilter = ({placeHolder, onSearch, filterOptions, onChangeFilterO
       <TouchableOpacity
         disabled={!isCollapsible}
         onPress={handleToggleExpand}
-        style={{backgroundColor: '#eee', height: '100%', width: 40, display: "flex", justifyContent: "center", alignItems: "center"}}>
+        style={styles.inputGroupContainer}>
           <Image source={search} style={styles.icon} />
       </TouchableOpacity>
       <TextInput
@@ -79,15 +80,11 @@ const SearchWithFilter = ({placeHolder, onSearch, filterOptions, onChangeFilterO
         placeholder={placeHolder || "Search"}
         value={text}
         onChangeText={onChangeText}
+        onSubmitEditing={onSubmit}
       />
       {text ? (
         <TouchableOpacity onPress={clearInput}>
-          <Icon
-            style={styles.clearIcon}
-            name="times-circle"
-            size={20}
-            color="#ccc"
-          />
+          <Image source={cancel} style={[styles.clearIcon]} />
         </TouchableOpacity>
       ) : null}
       {filterOptions && filterOptions.length > 0 && (
@@ -116,6 +113,14 @@ const styles = StyleSheet.create({
     width: 40,
     overflow: 'hidden',
   },
+  inputGroupContainer: {
+    backgroundColor: '#eee', 
+    height: '100%', 
+    width: 40, 
+    display: "flex", 
+    justifyContent: "center",
+    alignItems: "center",
+  },
   icon: {
     marginRight: 0,
     color: '#aaa',
@@ -125,8 +130,6 @@ const styles = StyleSheet.create({
   input: {
     flex: 1,
     padding: 10,
-
-    // width: "75%",
   },
   divider: {
     width: 2,
@@ -142,7 +145,9 @@ const styles = StyleSheet.create({
     alignSelf: 'flex-end',
   },
   clearIcon: {
-    marginRight: 5
+    marginRight: 5,
+    width: 25,
+    height: 25,
   },
 });
 
