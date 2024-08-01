@@ -1,6 +1,6 @@
 {
     "name": "react-native-search-with-filter",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "A simple search box with optional filter dropdown. Support both iOS/Android devices",
     "main": "index.js",
     "scripts": {},
@@ -18,7 +18,5 @@
       "search-box",
       "search-with-filter"
     ],
-    "dependencies": {
-      "react-native-vector-icons": "^10.1.0"
-    }
+    "dependencies": {}
   }

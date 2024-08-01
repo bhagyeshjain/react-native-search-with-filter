@@ -10,7 +10,8 @@ import {
   FlatList,
   Animated,
 } from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import filter from "./assets/filter.png";
+import search from "./assets/search.png";
 
 /**
  * 
@@ -69,7 +70,7 @@ const SearchWithFilter = ({placeHolder, onSearch, filterOptions, onChangeFilterO
         disabled={!isCollapsible}
         onPress={handleToggleExpand}
         style={{backgroundColor: '#eee', height: '100%', width: 40, display: "flex", justifyContent: "center", alignItems: "center"}}>
-          <Icon name="search" size={20} color="#ccc" style={styles.icon} />
+          <Image source={search} style={styles.icon} />
       </TouchableOpacity>
       <TextInput
         ref={inputRef}
@@ -117,6 +118,8 @@ const styles = StyleSheet.create({
   icon: {
     marginRight: 0,
     color: '#aaa',
+    width: 20,
+    height: 20,
   },
   input: {
     flex: 1,
@@ -169,7 +172,7 @@ const FilterBox = ({items, onValueChange}) => {
         ref={selectBoxRef}
         style={filterBoxStyles.selectBox}
         onPress={openModal}>
-        <Icon name="filter" size={20} color="#ccc" />
+        <Image source={filter} style={styles.icon} />
       </TouchableOpacity>
       {/* Options list modal box */}
       <Modal
