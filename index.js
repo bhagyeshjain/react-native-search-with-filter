@@ -9,6 +9,7 @@ import {
   Modal,
   FlatList,
   Animated,
+  Image,
 } from 'react-native';
 import filter from "./assets/filter.png";
 import search from "./assets/search.png";
