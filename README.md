@@ -1,2 +1,1 @@
-# react-native-search-with-filter
->**Documentation coming soon**
+This package has been renamed to [react-native-smart-search](https://github.com/bhagyeshjain/react-native-smart-search)
